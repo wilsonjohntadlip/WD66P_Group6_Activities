@@ -1,0 +1,36 @@
+
+body {
+	background: #99ff66;
+	justify-content: center;
+    margin-top: 250px;
+	margin-bottom: 250px;
+	margin-left: 250px;
+	margin-right: 250px;
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+.image {
+	width: 500px;
+	height: 500px;
+	clip-path: circle();
+	float: left;
+	margin-right: 100px;
+	
+}
+
+h1 {
+	font-size: 80px;
+	color: #ff0066;
+}
+h4 {
+	font-size: 50px;
+	color: #ff0066;
+}
+.socmed1 {
+	margin-left: 50px;
+    clip-path: circle();
+}
+.socmed1:hover {
+	transform: scale(2);
+}
+    
