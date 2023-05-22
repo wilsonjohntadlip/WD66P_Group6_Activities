@@ -1,11 +1,10 @@
 
 body {
 	background: #99ff66;
-	justify-content: center;
-    margin-top: 250px;
-	margin-bottom: 250px;
+    margin-top: 150px;
 	margin-left: 250px;
 	margin-right: 250px;
+	margin-bottom: 250px;
     font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
 
@@ -14,23 +13,57 @@ body {
 	height: 500px;
 	clip-path: circle();
 	float: left;
-	margin-right: 100px;
+	margin-right: 100px;	
 	
 }
 
-h1 {
-	font-size: 80px;
+h2 {
+	font-size: 60px;
 	color: #ff0066;
 }
 h4 {
-	font-size: 50px;
+	font-size: 35px;
 	color: #ff0066;
 }
 .socmed1 {
 	margin-left: 50px;
     clip-path: circle();
+	margin-top: 50px;
 }
 .socmed1:hover {
 	transform: scale(2);
 }
-    
+p {
+	color: #ff0066;
+	font-size: 20px;
+}
+
+ul {
+    color: #ff0066;
+    list-style-type: none;
+	font-size: 25px;
+	border-bottom: 1px solid #FF0000;
+	border-top: 1px solid #FF0000;
+	border-left: 1px solid #FF0000;
+	border-right: 1px solid #FF0000;
+	background-color:  #ffcccc;
+	
+}
+li {
+    margin-left: 20px;
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	display: inline-block;
+	margin-left: 30px;
+	margin-right: 30px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	
+}
+
+.menu {
+   margin-top: 250px;  
+   display: center;
+}
+ li a:hover {
+        background-color: #ccffb3;
+      }
