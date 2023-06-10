@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        PHP Function
+    </title>
+</head>
+
+<body>
+
+<?php
+
+echo computeRemainingStocks(3, 0, 0);
+echo computeRemainingStocks(5, 5, 0);
+echo computeRemainingStocks(50, 0, 5);
+
+$item1 = 100;
+$item2 = 200;
+$item3 = 300;
+
+function computeRemainingStocks($quantity1, $quantity2, $quantity3) {
+    global $item1, $item2, $item3;
+    
+    // $item1 = 100;
+    // $item2 = 200;
+    // $item3 = 300;
+
+    $remaining1 = $item1 - $quantity1;
+    $remaining2 = $item2 - $quantity2;
+    $remaining3 = $item3 - $quantity3;
+
+    $output = "";
+    $output .= "Item 1 - ($quantity1) quantity | remaining stocks = $remaining1\n";
+    $output .= "Item 2 - ($quantity2) quantity | remaining stocks = $remaining2\n";
+    $output .= "Item 3 - ($quantity3) quantity | remaining stocks = $remaining3\n";
+
+    return $output;
+}
+
+?>
+</body>
+
+</html>
