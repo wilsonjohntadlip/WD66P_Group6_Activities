@@ -1,6 +1,5 @@
 <?php
 
-
 echo computeRemainingStocks(1, $first=3);
 echo "\n";
 echo computeRemainingStocks(1, $second=$first+5);
@@ -10,8 +9,6 @@ echo "\n";
 echo computeRemainingStocks(1, $second+50);
 echo "\n";
 echo computeRemainingStocks(3, 5);
-
-
 
 function computeRemainingStocks($itemNumber, $sold) {
   
@@ -32,8 +29,6 @@ $remainingStock = $item - $sold;
     
  echo "item $itemNumber - ($sold) qty  |  Remaining Stocks = $remainingStock";
  
- 
-
 }
 
 ?>
