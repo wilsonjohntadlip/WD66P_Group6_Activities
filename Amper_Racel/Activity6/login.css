@@ -2,15 +2,13 @@
     font-size: small;
    }
    .container_of_form {
-      margin-top: 15%;
+      margin-top: 10%;
       margin-bottom: 25%;
       margin-left: 25%;
       margin-right: 25%;
       border: solid brown;
       border-radius: 5px;
       background-color:  #fffae6;
-      padding-left: 15px;
-      padding-right: 15px;
       padding-bottom: 25px;
     } 
     input[type=text], input[type=password] {
@@ -20,4 +18,22 @@
        display: inline-block;
        border: 1px solid #ccc;
        box-sizing: border-box;
+    }
+    h3 {
+      background-color: rgba(255, 115, 0, 0.238);
+      background-size: 100%;
+      margin-top: 0%;
+      margin-left: 0%;
+      margin-right: 0%;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      padding-left: 15px;
+    
+    }
+    .mainContainer {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .headingsContainer {
+      text-align: center;
     }

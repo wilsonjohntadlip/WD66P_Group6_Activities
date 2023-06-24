@@ -14,27 +14,26 @@
   <body>
  <div class="container_of_form">
         <h3>Shop System</h3>
-    <form> 
-        <center>    
+    <form>   
         <div class="headingsContainer">
             <h4>Account login</h4>
         </div>
-         </center>
         <div class="mainContainer">
             <label for="emailadd">Email address</label><br>
             <input type="text" id="emailadd"  placeholder="Enter Email Address" required>
             <p>"We'll never share your email with anyone else".</p>
             <label for="pswrd">Password</label><br>
             <input type="password" id="pswrd" placeholder="Enter Password" required>  
-            <p class="register"> <a href="#">Register your account!</a></p>  
+            <p class="register"> <a href="register.html"><b>Register your account!</b></a></p>  
             <button onclick="login()">Login</button>     
         </div>     
      </form>  
-    </div>    
+    </div>       
   </body>
   <script>  
     function login(){
        let emailadd = document.getElementById("emailadd").value;
+       console.log(emailadd);
        let pswrd = document.getElementById("pswrd").value;
        if ( emailadd == "Forget" && pswrd == "forget#123"){
         removeRenderedMessageElement();
