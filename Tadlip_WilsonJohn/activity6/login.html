@@ -10,7 +10,7 @@
   <body>
     <div class="container">
       <h5 class="text-center">Account Management System</h5>
-      <form class="mx-auto">
+      <form class="mx-auto" id="loginForm">
         <h4 class="text-center mb-5">Login</h3>
         <div class="result" id="result"></div>
         <div class="mb-3" >
@@ -29,28 +29,65 @@
       </form>
 
     </div>
-   
-    
+
   <script>
+    
+    let resultDiv = document.getElementById('result');
+    
+    function displaySuccessMessage() {
 
+      deleteResultDiv();
 
+      let successDiv = document.createElement('div');
+        successDiv.classList.add('alert', 'alert-success');
+        successDiv.textContent = 'Successfully logged in.';
 
-  let userEmail = "admin@email.com";
-  let userPassword = "password";
+        resultDiv.appendChild(successDiv);
+    }
 
-  function login() {
-    let inputEmail = document.getElementById("email_input").value;
-    let inputPassword = document.getElementById("password_input").value;
-        
-    if (inputEmail === userEmail && inputPassword === userPassword) {
-        alert ("Successfully logged in");
-      } 
-      else {
-        alert ("Wrong email or password");
+    function displayErrorMessage() {
+
+      deleteResultDiv();
+
+      let errorDiv = document.createElement('div');
+      errorDiv.classList.add('alert', 'alert-danger');
+      errorDiv.textContent = 'Invalid email or password.';
+
+      resultDiv.appendChild(errorDiv);
+    }
+
+    function deleteResultDiv() {
+
+      // for (let resultDiv of result) {
+      //   let element = resultDiv[result];
+			// 	element.parentNode.removeChild(element);
+
+      while (resultDiv.firstChild) {
+        resultDiv.removeChild(resultDiv.firstChild);
       }
     }
-    
 
-    </script>
-  </body>
+    function handleLoginFormSubmit(event) {
+      event.preventDefault(); //default
+
+      // fetch inputs
+      let email = document.getElementById('email_input').value;
+      let password = document.getElementById('password_input').value;
+
+      // Check if email and password match the desired credentials
+      if (email === 'admin@email.com' && password === 'password') {
+        deleteResultDiv();
+        displaySuccessMessage();
+        } 
+        else {
+          deleteResultDiv();
+          displayErrorMessage();
+        }
+}
+
+document.getElementById('loginForm').addEventListener('submit', handleLoginFormSubmit);
+
+</script>
+    
+</body>
 </html>
