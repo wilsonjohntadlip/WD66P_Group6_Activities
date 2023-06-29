@@ -17,36 +17,49 @@
   </head>
   <body>
  <div class="container_of_form">
-        <h3>Shop System</h3>
-    <form>   
+        <h3>Shop System</h3>  
         <div class="headingsContainer">
             <h4>Account login</h4>
         </div>
         <div class="mainContainer">
             <label for="emailadd">Email address</label><br>
-            <input type="text" id="emailadd"  placeholder="Enter Email Address" required>
+            <input type="text" id="emailadd"  placeholder="Enter Email Address" required/>
             <p>"We'll never share your email with anyone else".</p>
             <label for="pswrd">Password</label><br>
-            <input type="password" id="pswrd" placeholder="Enter Password" required>  
+            <input type="password" id="pswrd" placeholder="Enter Password" required/>  
             <p class="register"> <a href="register.html"><b>Register your account!</b></a></p>  
             <button onclick="login()">Login</button>     
-        </div>     
-     </form>  
+        </div>       
     </div>       
   </body>
   <script>  
-    function login(){
-       let emailadd = document.getElementById("emailadd").value;
-       console.log(emailadd);
-       let pswrd = document.getElementById("pswrd").value;
-       if ( emailadd == "Forget" && pswrd == "forget#123"){
-        removeRenderedMessageElement();
-        testCreateElement("Successfully Login", "success");
-			 } 
-       else {
-			removeRenderedMessageElement();
-			testCreateElement("Wrong username and password", "failed");
-			}
-    }
-  </script>
+  
+  let sampleEmail = "admin";
+  let samplePassword = "password";
+
+function login(){
+ 
+   let emailadd = document.getElementById("emailadd").value;
+   let pswrd = document.getElementById("pswrd").value;
+ 
+   if ( emailadd == "sampleEmail" && pswrd == "samplePasswords"){
+    removeRenderedMessageElement();
+    testCreateElement("Successfully Login");
+   } 
+   else {
+  removeRenderedMessageElement();
+  testCreateElement("Wrong username and password");
+  }
+}
+
+function testCreateElement(description) {
+  const div = document.createElement('div');
+  div.textContent = description;
+  div.classList.add("message");
+  div.classList.add(loginClass);
+  
+  const parent = document.getElementById("container");
+  parent.appendChild(div);
+}
+</script>
 </html>
