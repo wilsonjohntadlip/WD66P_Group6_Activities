@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background-color: #ffebb3;
+      }
+      .container_of_form {
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        border: solid brown;
+        border-radius: 5px;
+        background-color: #fffae6;
+        padding-bottom: 15px;
+      }
+      h3 {
+        background-color: rgba(255, 115, 0, 0.238);
+        background-size: 100%;
+        margin-left: 0%;
+        margin-right: 0%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        padding-left: 15px;
+      }
+      h4 {
+        text-align: center;
+      }
+      .row {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      .col-12 {
+        display: grid;
+      }
+      .form-check {
+        text-align: right;
+      }
+      .form-check-input {
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container_of_form">
+      <h3>Shop System</h3>
+      <form class="row g-3 needs-validation" action="test.php" method="POST">
+        <div class="headingsContainer">
+          <h4>Register Your Account</h4>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom01" class="form-label">First name*</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            name="firstName"
+            required
+          />
+
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom02" class="form-label">Last name*</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastName"
+            name="lastName"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom01" class="form-label">Birthday*</label>
+          <br />
+          <input
+            type="date"
+            class="form-control"
+            placeholder="dd/mm/yy"
+            id="birthDate"
+            name="birthDate"
+            required
+          />
+          <div class="valid-feedback">Birthdate validated</div>
+          <div class="invalid-feedback">Choose a valid birth date</div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom02" class="form-label">Address*</label>
+          <br />
+          <textarea
+            type="textarea"
+            class="form-control"
+            placeholder="Enter address"
+            id="address"
+            name="address"
+            required
+          >
+          </textarea>
+          <div class="valid-feedback">Address validated</div>
+          <div class="invalid-feedback">Please enter a valid address</div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">City*</label>
+          <input
+            type="text"
+            class="form-control"
+            id="city"
+            name="city"
+            required
+          />
+          <div class="invalid-feedback">Please provide a valid city.</div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom04" class="form-label">Province*</label>
+          <select class="form-select" id="province" name="province" required>
+            <option>Abra</option>
+            <option>Bulacan</option>
+            <option>Quezon City</option>
+          </select>
+          <div class="invalid-feedback">Please select a valid state.</div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom05" class="form-label">Zip*</label>
+          <input
+            type="text"
+            class="form-control"
+            id="zip"
+            name="zip"
+            required
+          />
+          <div class="invalid-feedback">Please provide a valid zip.</div>
+        </div>
+        <hr />
+        <div class="col-md-6">
+          <label for="validationCustom01" class="form-label">Email*</label>
+          <input
+            type="email"
+            class="form-control"
+            id="emailAdd"
+            name="emailAdd"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom02" class="form-label">Password*</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom02" class="form-label"
+            >Confrim Password*</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="confirmPassword"
+            name="confirmPassword"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div>
+          <div class="form-check">
+            <input type="checkbox" id="subscribe" name="subscribe" />
+            Subscribe foir the latest news
+            <label class="form-check-label" for="invalidCheck"> </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <button onclick="Submit()" class="btn btn-primary" type="submit">
+            Create your account
+          </button>
+        </div>
+      </form>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+      integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
