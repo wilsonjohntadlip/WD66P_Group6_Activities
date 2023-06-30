@@ -1,65 +1,114 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="login.css">
-    <title>Login Page</title>    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="login.css" />
+    <title>Activity 6</title>
     <style>
       body {
-       background-color:  #ffebb3;      
-     } 
-     form {
-      margin-left: 5%;
-      margin-right: 5%;
-     }    
+        background-color: #ffebb3;
+      }
+      form {
+        margin-left: 5%;
+        margin-right: 5%;
+      }
     </style>
   </head>
   <body>
- <div class="container_of_form">
-        <h3>Shop System</h3>  
-        <div class="headingsContainer">
-            <h4>Account login</h4>
+    <div class="container_of_form">
+      <h3>Shop System</h3>
+      <div class="headingsContainer">
+        <h4>Account login</h4>
+      </div>
+      <form>
+        <div id="parentForm"></div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="inputEmail"/>
+          <div id="emailHelp" class="form-text">
+            We'll never share your email with anyone else.
+          </div>
         </div>
-        <div class="mainContainer">
-            <label for="emailadd">Email address</label><br>
-            <input type="text" id="emailadd"  placeholder="Enter Email Address" required/>
-            <p>"We'll never share your email with anyone else".</p>
-            <label for="pswrd">Password</label><br>
-            <input type="password" id="pswrd" placeholder="Enter Password" required/>  
-            <p class="register"> <a href="register.html"><b>Register your account!</b></a></p>  
-            <button onclick="login()">Login</button>     
-        </div>       
-    </div>       
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="inputPassword"/>
+        </div>
+        <div class="mb-3 form-check">
+          <p class="register">
+            <a href="register.html"><b>Register your account!</b></a>
+          </p>
+          <button type="button" onclick="login()" class="btn btn-primary">
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous">
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+      integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+      crossorigin="anonymous">
+    </script>
+
+    <script>
+      const default_eamil = "admin";
+      const default_password = "password";
+
+      function login() {
+        let inputEmail = document.getElementById("inputEmail");
+        let inputPassword = document.getElementById("inputPassword");
+
+        if (inputEmail.value == "" && inputPassword.value == "") {
+          removeRenderedMessageElement();
+          renderMessage("alert-warning", "Please enter email and password");
+          return false;
+        }
+        if (default_eamil == inputEmail.value && default_password == inputPassword.value) {
+          removeRenderedMessageElement();
+          renderMessage("alert-success", "Successfully Login");
+        } else {
+          removeRenderedMessageElement();
+          renderMessage("alert-danger", "Wrong email and password");
+        }
+      }
+
+      function removeRenderedMessageElement() {
+        let currentMessages = document.getElementsByClassName("alert");
+
+        for (let i = 0; i < currentMessages.length; i++) {
+          let element = currentMessages[i];
+          element.parentNode.removeChild(element);
+        }
+      }
+      function renderMessage(messageClass, description) {
+        let div = document.createElement("div");
+        div.classList.add("alert");
+        div.classList.add(messageClass);
+        div.setAttribute("role", "alert");
+        let b = document.createElement("b");
+        b.textContent = description;
+        div.appendChild(b);
+
+        let parentForm = document.getElementById("parentForm");
+        parentForm.appendChild(div);
+      }
+    </script>
   </body>
-  <script>  
-  
-  let sampleEmail = "admin";
-  let samplePassword = "password";
-
-function login(){
- 
-   let emailadd = document.getElementById("emailadd").value;
-   let pswrd = document.getElementById("pswrd").value;
- 
-   if ( emailadd == "sampleEmail" && pswrd == "samplePasswords"){
-    removeRenderedMessageElement();
-    testCreateElement("Successfully Login");
-   } 
-   else {
-  removeRenderedMessageElement();
-  testCreateElement("Wrong username and password");
-  }
-}
-
-function testCreateElement(description) {
-  const div = document.createElement('div');
-  div.textContent = description;
-  div.classList.add("message");
-  div.classList.add(loginClass);
-  
-  const parent = document.getElementById("container");
-  parent.appendChild(div);
-}
-</script>
 </html>

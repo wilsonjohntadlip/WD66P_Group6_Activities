@@ -9,7 +9,7 @@ $province = $_POST['province'];
 $zip = $_POST['zip'];
 $emailAdd = $_POST['emailAdd'];
 $password = $_POST['password'];
-$confirm = $POST['confirmPassword'];
+$confirm = $_POST['confirmPassword'];
 
 if ($password != $confirm) {
 echo "You cannot proceed to your account because your password does not match";
@@ -17,11 +17,11 @@ echo "You cannot proceed to your account because your password does not match";
 
 }
 
-echo "Hi" . ucwords($firstName) . " " . ucwords($lastName);
+echo "Hi " . ucwords($firstName) . " " . ucwords($lastName);
 echo "<br />Welcome to My System";
-echo "<br /> Your birthdate is" . $birthDate;
+echo "<br /> Your birthdate is " . $birthDate;
 echo "<br /> You are currently residing at " .  ucwords($address) . " " . ucwords($city) . " " . ucwords($province);
-echo "<br /> Your email is " . strlower($emailAdd);
+echo "<br /> Your email is " . strtolower($emailAdd);
 
 if (isset($_POST[ 'subscribe'])) {
      echo "<br />Thanks for subscribing to our latest news";
